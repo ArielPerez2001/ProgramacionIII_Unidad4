@@ -1,6 +1,8 @@
 package models;
 import java.sql.*;
 
+import javax.swing.JOptionPane;
+
 public class AuthModel {
 
     public AuthModel() {
@@ -25,8 +27,10 @@ public class AuthModel {
 
                 if (rs.next()) {
                     System.out.println("Login successful!");
+                    JOptionPane.showMessageDialog(null, "Login successful!");
                 } else {
                     System.out.println("Invalid credentials.");
+                    JOptionPane.showMessageDialog(null, "Invalid credentials.", "Warning", JOptionPane.WARNING_MESSAGE);
                 }
 
                 con.close();
